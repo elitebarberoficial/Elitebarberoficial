@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#080706">
+<title>Agendamento | Barba de Elite</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#080706;
+  color:#fff;
+  font-family:Montserrat,sans-serif;
+  min-height:100vh;
+}
+
+header{
+  height:105px;
+  border-bottom:1px solid #29251b;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 7%;
+  background:#080706;
+}
+
+.logo{
+  color:#d9ae2f;
+  font-family:Cinzel,serif;
+  font-size:25px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.sub{
+  display:block;
+  color:#fff;
+  font-family:Montserrat,sans-serif;
+  font-size:10px;
+  letter-spacing:5px;
+  margin-top:7px;
+  text-align:center;
+}
+
+.menu{
+  color:#d9ae2f;
+  font-size:32px;
+}
+
+.hero{
+  min-height:calc(100vh - 105px);
+  padding:55px 7% 80px;
+  background:
+  radial-gradient(circle at top right,#352b0c55,transparent 40%),
+  linear-gradient(180deg,#0d0b08,#080706);
+}
+
+.container{
+  max-width:650px;
+  margin:auto;
+}
+
+.top{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.top span{
+  color:#d9ae2f;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:4px;
+}
+
+h1{
+  font-family:Cinzel,serif;
+  font-size:42px;
+  margin:12px 0;
+}
+
+.top p{
+  color:#aaa;
+  line-height:1.6;
+}
+
+.form-box{
+  background:#0f0d0a;
+  border:1px solid #302917;
+  padding:30px;
+  border-radius:4px;
+  box-shadow:0 20px 60px #0008;
+}
+
+label{
+  display:block;
+  color:#d9ae2f;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  margin-bottom:9px;
+}
+
+input,select{
+  width:100%;
+  height:52px;
+  padding:0 15px;
+  margin-bottom:22px;
+  border:1px solid #393125;
+  border-radius:3px;
+  outline:none;
+  background:#17140f;
+  color:#fff;
+  font-family:Montserrat,sans-serif;
+  font-size:15px;
+}
+
+input:focus,select:focus{
+  border-color:#d9ae2f;
+}
+
+select option{
+  background:#17140f;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+button{
+  width:100%;
+  height:58px;
+  border:0;
+  border-radius:3px;
+  background:#d9ae2f;
+  color:#090806;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition:.2s;
+  margin-top:5px;
+}
+
+button:hover{
+  background:#edc444;
+  transform:translateY(-1px);
+}
+
+.info{
+  text-align:center;
+  color:#777;
+  font-size:11px;
+  margin-top:18px;
+  line-height:1.6;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin-top:25px;
+  color:#d9ae2f;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+}
+
+@media(max-width:600px){
+
+  header{
+    height:90px;
+    padding:0 28px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .sub{
+    font-size:8px;
+    letter-spacing:4px;
+  }
+
+  .menu{
+    font-size:28px;
+  }
+
+  .hero{
+    padding:42px 20px 60px;
+  }
+
+  h1{
+    font-size:32px;
+  }
+
+  .form-box{
+    padding:23px 20px;
+  }
+
+  .row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div>
+    <div class="logo">BARBA DE ELITE</div>
+    <span class="sub">BARBEARIA • TABAÍ RS</span>
+  </div>
+
+  <div class="menu">☰</div>
+
+</header>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="top">
+      <span>AGENDAMENTO</span>
+
+      <h1>Reserve seu horário.</h1>
+
+      <p>
+        Escolha o serviço, a data e o horário que deseja.
+        Seu agendamento será enviado diretamente pelo WhatsApp.
+      </p>
+    </div>
+
+    <form class="form-box" id="agendamento">
+
+      <label for="nome">SEU NOME</label>
+
+      <input
+        type="text"
+        id="nome"
+        placeholder="Digite seu nome"
+        required
+      >
+
+      <label for="servico">ESCOLHA O CORTE</label>
+
+      <select id="servico" required>
+
+        <option value="">Selecione um serviço</option>
+
+        <option>Corte masculino</option>
+        <option>Corte + barba</option>
+        <option>Barba</option>
+        <option>Corte infantil</option>
+        <option>Degradê</option>
+        <option>Outro serviço</option>
+
+      </select>
+
+      <div class="row">
+
+        <div>
+
+          <label for="data">DATA</label>
+
+          <input
+            type="date"
+            id="data"
+            required
+          >
+
+        </div>
+
+        <div>
+
+          <label for="hora">HORÁRIO</label>
+
+          <select id="hora" required>
+
+            <option value="">Escolha</option>
+
+            <option>08:00</option>
+            <option>08:30</option>
+            <option>09:00</option>
+            <option>09:30</option>
+            <option>10:00</option>
+            <option>10:30</option>
+            <option>11:00</option>
+
+            <option>13:30</option>
+            <option>14:00</option>
+            <option>14:30</option>
+            <option>15:00</option>
+            <option>15:30</option>
+            <option>16:00</option>
+            <option>16:30</option>
+            <option>17:00</option>
+            <option>17:30</option>
+            <option>18:00</option>
+            <option>18:30</option>
+            <option>19:00</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+      <button type="submit">
+        CONFIRMAR PELO WHATSAPP
+      </button>
+
+      <div class="info">
+        Ao clicar, o WhatsApp será aberto com os dados
+        do seu agendamento preenchidos.
+      </div>
+
+    </form>
+
+    <a href="index.html" class="back">
+      ← Voltar para o site
+    </a>
+
+  </div>
+
+</section>
+
+<script>
+
+document
+.getElementById("agendamento")
+.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const nome =
+    document.getElementById("nome").value;
+
+  const servico =
+    document.getElementById("servico").value;
+
+  const data =
+    document.getElementById("data").value;
+
+  const hora =
+    document.getElementById("hora").value;
+
+  const dataFormatada =
+    data.split("-").reverse().join("/");
+
+  /* WHATSAPP DA BARBA DE ELITE */
+  const numero = "555199856276";
+
+  const mensagem =
+`Olá! Gostaria de agendar um horário na Barba de Elite.
+
+👤 Nome: ${nome}
+✂️ Serviço: ${servico}
+📅 Data: ${dataFormatada}
+🕐 Horário: ${hora}
+
+Aguardo a confirmação do agendamento.`;
+
+  const url =
+    "https://wa.me/" +
+    numero +
+    "?text=" +
+    encodeURIComponent(mensagem);
+
+  window.open(url,"_blank");
+
+});
+
+</script>
+
+</body>
+</html>
